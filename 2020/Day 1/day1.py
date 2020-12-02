@@ -10,22 +10,24 @@ def read_input(file_loc):
 
 # for part 1
 def get_2_nums(values, goal):
+    copy_values = values.copy()
     for val in values:
-        if (goal - val) in values:
+        copy_values.remove(val)
+        if (goal - val) in copy_values:
             return [val, goal-val]
     return None
 
 # for part 2
 def get_3_nums(values):
-    orig_values = values
-    for val in orig_values:
-        values.remove(val)
+    copy_values = values.copy()
+    for val in values:
+        copy_values.remove(val)
         sub_goal = goal - val
-        res = get_2_nums(values, sub_goal)
+        res = get_2_nums(copy_values, sub_goal)
         if res is not None:
             return [val, res[0], res[1]]
 
-values = read_input("../Inputs/day1.txt")
+values = read_input("../Inputs/test.txt")
 res = get_2_nums(values, goal)
 num1 = res[0]
 num2 = res[1]
