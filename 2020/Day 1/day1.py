@@ -27,7 +27,7 @@ def get_3_nums(values):
         if res is not None:
             return [val, res[0], res[1]]
 
-values = read_input("../Inputs/test.txt")
+values = read_input("../Inputs/day1.txt")
 res = get_2_nums(values, goal)
 num1 = res[0]
 num2 = res[1]
