@@ -3,17 +3,8 @@
 def read_input(file_loc):
     with open(file_loc, "r") as f:
         values = f.read().split('\n')
-    values = [convert_to_bool(i) for i in values]
+    values = [i for i in values]
     return values
-
-def convert_to_bool(row):
-    res = []
-    for i in row:
-        if i == '#':
-            res.append(True)
-        else:
-            res.append(False)
-    return res
 
 def get_next_pos(curr_row, curr_col, steps_right, steps_down):
     next_col = curr_col + steps_right
@@ -25,12 +16,10 @@ def traverse(steps_right, steps_down):
     count = 0
     curr_row = 0
     curr_col = 0
-
     while curr_row < map_length:
-        if tree_map[curr_row][curr_col]:
+        if tree_map[curr_row][curr_col] == '#':
             count = count + 1
         curr_row, curr_col = get_next_pos(curr_row, curr_col, steps_right, steps_down)
-
     return count
 
 tree_map = read_input("../Inputs/day3.txt")
