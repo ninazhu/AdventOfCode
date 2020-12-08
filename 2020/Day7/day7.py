@@ -3,7 +3,6 @@
 def read_input(file_loc):
     with open(file_loc, "r") as f:
         values = f.read().split('\n')
-    values = [i for i in values]
     return values
 
 def build_child_to_parent_rules(values):
