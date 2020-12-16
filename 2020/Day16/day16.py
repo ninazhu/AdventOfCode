@@ -70,8 +70,6 @@ for k, fields in possible_cols.items():
     f = [i for i in fields if i not in final_cols]
     final_cols[k] = f[0]
 
-print(final_cols)
-print(my_ticket)
 product = 1
 for i, col in enumerate(final_cols):
     if col.startswith("departure"):
