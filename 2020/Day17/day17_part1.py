@@ -41,7 +41,6 @@ def run_cycle(min_x, max_x, min_y, max_y, min_z, max_z, active_coords):
                 is_active = curr_coord in active_coords
                 neigh_coords = get_neighbor_coords(curr_coord)
                 count = len(set(neigh_coords) & set(active_coords))
-                # print(f'curr_coord: {curr_coord} active {is_active} count {count}')
                 if is_active:
                     if count in [2, 3]:
                         new_active_coords.append(curr_coord)
